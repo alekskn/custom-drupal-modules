@@ -1,0 +1,6 @@
+services:
+  mikhalych_hero.generator:
+    class: Drupal\mikhalych_hero\Generator\MikhalychHeroPluginGenerator
+    arguments: ['@entity_type.manager']
+    tags:
+      - { name: drush.generator }

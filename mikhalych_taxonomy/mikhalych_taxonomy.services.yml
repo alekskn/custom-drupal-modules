@@ -1,0 +1,4 @@
+services:
+  mikhalych_taxonomy.tags.helper:
+    class: Drupal\mikhalych_taxonomy\Service\TagsHelper
+    arguments: ['@entity_type.manager']

@@ -1,0 +1,7 @@
+name: Mikhalych Hero
+description: Custom page title.
+type: module
+package: mikhalych
+core: 8.x
+core_version_requirement: ^8 || ^9
+

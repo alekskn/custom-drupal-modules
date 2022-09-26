@@ -1,0 +1,13 @@
+{% set bem_block = 'mikhalych-blog-random-posts' %}
+<div{{ attributes.addClass(bem_block) }}>
+  {% if items|length %}
+    <h2 class="{{ bem_block }}__title"><span>Случайные материалы</span></h2>
+  {% endif %}
+  <div class="{{ bem_block }}__items">
+    {% for item in items %}
+      <div class="{{ bem_block }}__item">
+        {{ item }}
+      </div>
+    {% endfor %}
+  </div>
+</div>

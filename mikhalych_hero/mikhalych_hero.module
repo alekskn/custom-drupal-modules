@@ -1,0 +1,54 @@
+<?php
+
+/**
+ * @file
+ * Main file for custom hooks and functions.
+ */
+
+/**
+ * Implements hook_theme().
+ */
+function mikhalych_hero_theme($existing, $type, $theme, $path) {
+  return [
+    'mikhalych_hero' => [
+      'variables' => [
+        'title' => NULL,
+        'subtitle' => NULL,
+        'image' => NULL,
+        'video' => [],
+        'plugin_id' => NULL,
+      ],
+      'file' => 'mikhalych_hero.theme.inc',
+      'pattern' => 'mikhalych_hero__',
+    ],
+  ];
+}
+
+/**
+ * Implements hook_theme_suggestions_HOOK() for mikhalych-hero.html.twig.
+ */
+function mikhalych_hero_theme_suggestions_mikhalych_hero(array $variables) {
+  $suggestions = [];
+
+  if (!empty($variables['plugin_id'])) {
+    $suggestions[] = 'mikhalych_hero__' . $variables['plugin_id'];
+  }
+
+  if (!empty($variables['image'])) {
+    $suggestions[] = 'mikhalych_hero__image';
+  }
+
+  if (!empty($variables['video']) && !empty($variables['image'])) {
+    $suggestions[] = 'mikhalych_hero__video';
+  }
+
+  if (!empty($variables['image'])) {
+    $suggestions[] = 'mikhalych_hero__' . $variables['plugin_id'] . '__image';
+  }
+
+  if (!empty($variables['video']) && !empty($variables['image'])) {
+    $suggestions[] = 'mikhalych_hero__' . $variables['plugin_id'] . '__video';
+  }
+
+  return $suggestions;
+}

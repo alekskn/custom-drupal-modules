@@ -1,0 +1,6 @@
+name: Mikhalych
+type: module
+description: Core module for custom code, hooks and functions.
+core: 8.x
+package: mikhalych
+core_version_requirement: ^8 || ^9

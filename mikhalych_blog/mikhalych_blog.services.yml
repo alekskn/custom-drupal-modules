@@ -1,0 +1,6 @@
+services:
+  mikhalych_blog.manager:
+    class: 'Drupal\mikhalych_blog\Service\BlogManager'
+    arguments: ['@entity_type.manager']
+  mikhalych_blog.lazy_builder:
+    class: 'Drupal\mikhalych_blog\Service\BlogLazyBuilder'

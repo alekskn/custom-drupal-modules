@@ -1,0 +1,10 @@
+services:
+  plugin.manager.mikhalych_hero.entity:
+    class: Drupal\mikhalych_hero\Plugin\MikhalychHeroPluginManager
+    arguments: [entity, '@container.namespaces', '@cache.discovery',
+                '@module_handler', '@current_route_match', '@plugin.manager.condition']
+
+  plugin.manager.mikhalych_hero.path:
+    class: Drupal\mikhalych_hero\Plugin\MikhalychHeroPluginManager
+    arguments: [ path, '@container.namespaces', '@cache.discovery',
+                 '@module_handler', '@current_route_match', '@plugin.manager.condition' ]
